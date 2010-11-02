@@ -1,5 +1,5 @@
 \documentclass[a4wide,10pt]{article}
-%\usepackage{a4wide}
+\usepackage{a4wide}
 \usepackage[applemac,utf8]{inputenc}
 \usepackage[danish]{babel}
 \usepackage[T1]{fontenc}
@@ -16,4 +16,52 @@
 \date{\today}
 \maketitle
 
+\section{Draw the double sided spectrum of the amplitudes for the signal x(t)} % (fold)
+\label{sec:draw_the_double_sided_spectrum_of_the_amplitudes_for_the_signal_x_t_}
+By using Eulers princible $x(t)$ can be rewritten as:
+\begin{eqnarray}
+	x(t)&=&2\cdot \frac{e^{i2\pi \cdot 1000t}+e^{i2\pi \cdot 1000t}}{2}+\frac{e^{i2\pi \cdot 3000t}+e^{i2\pi \cdot 3000t}}{2}+\frac{e^{i2\pi \cdot 19000t}+e^{i2\pi \cdot 19000t}}{2} \nonumber \\
+	x(t)&=&e^{i2\pi \cdot 1000t}+e^{i2\pi \cdot 1000t}+\frac{1}{2} \cdot e^{i2\pi \cdot 3000t}+\frac{1}{2} \cdot e^{-i2\pi \cdot 3000t}+\frac{1}{2} \cdot e^{i2\pi \cdot 19000t}+\frac{1}{2} \cdot e^{-i2\pi \cdot 19000t}
+\end{eqnarray}
+Which gives us the coefficients:
+\begin{eqnarray}
+	c_1&=&1 \nonumber \\
+	c_{-1}&=&1 \nonumber \\
+	c_3&=&0,5 \nonumber \\
+	c_{-3}&=&0,5 \nonumber \\
+	c_{19}&=&0,5 \nonumber \\
+	c_{-19}&=&0,5 \nonumber \\
+\end{eqnarray}
+And the double sided spectrum:
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=8cm]{images/double-sided-spectrum-1.png}
+	\caption{Double Sided Spectrum without aliasing}
+	\label{fig:images_double-sided-spectrum-1}
+\end{figure}
+
+% section draw_the_double_sided_spectrum_of_the_amplitudes_for_the_signal_x_t_ (end)
+
+\newpage
+
+\section{Draw the double sided spectrum xs1(t) for the sampled signal without the
+anti-aliasing filter} % (fold)
+\label{sec:draw_the_double_sided_spectrum_xs1_t_for_the_sampled_signal_without_the_anti_aliasing_filter}
+The samplerate of the A/D-converter is 20kHz. The new coefficients will be calculated by by multiplying them with the samplerate. Which gives:
+\begin{eqnarray}
+	c_1&=&20000 \nonumber \\
+	c_{-1}&=&20000 \nonumber \\
+	c_3&=&10000 \nonumber \\
+	c_{-3}&=&10000 \nonumber \\
+	c_{19}&=&10000 \nonumber \\
+	c_{-19}&=&10000 \nonumber \\
+\end{eqnarray}
+And a plot of the double sided spectrum:
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=8cm]{images/double-sided-spectrum-2.png}
+	\caption{Double Sided Spectrum with aliasing}
+	\label{fig:images_double-sided-spectrum-2}
+\end{figure}
+% section draw_the_double_sided_spectrum_xs1_t_for_the_sampled_signal_without_the_anti_aliasing_filter (end)
 \end{document}

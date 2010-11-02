@@ -64,4 +64,29 @@ And a plot of the double sided spectrum:
 	\label{fig:images_double-sided-spectrum-2}
 \end{figure}
 % section draw_the_double_sided_spectrum_xs1_t_for_the_sampled_signal_without_the_anti_aliasing_filter (end)
+\newpage
+\section{Calculate the A/D converter signal in dB} % (fold)
+\label{sec:calculate_the_a_d_converter_signal_in_db}
+A/D-converter signal can be calculated by using:
+\begin{equation}
+	SNR_{dB} = 10,79 + 20 \cdot Log_{10}(\frac{x_{rms}}{\Delta})
+\end{equation}
+Where:
+\begin{equation}
+	\Delta = \frac{x_{max} - x_{min}}{2^m}
+\end{equation}
+$x_{max}$ and $x_{min}$ is the maximum and minimum voltage for the A/D-converter and $m$ is the bitsize.
+$x_{rms}$ is given by:
+\begin{equation}
+	x_{rms} = \sqrt{\frac{1}{T}\int_0^T x(t)^2 dT}
+\end{equation}
+We can then start calcualting:
+\begin{eqnarray}
+	x_{rms} &=& \sqrt{3} \nonumber \\
+	\Delta = \frac{2 - (-2)}{2^8} &=& \frac{1}{64} \nonumber \\
+	SNR_{dB} = 10,79 + 20 \cdot Log_{10}(\frac{\sqrt{3}}{\frac{1}{64}}) &=& 51,6848dB \nonumber
+\end{eqnarray}
+$SNR_{dB}$ is the strength of the signal.
+% section calculate_the_a_d_converter_signal_in_db (end)
+
 \end{document}

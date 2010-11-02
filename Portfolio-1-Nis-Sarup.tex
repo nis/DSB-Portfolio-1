@@ -113,9 +113,35 @@ The order of the filter is 5.
 or 10000 Hz} % (fold)
 \label{sec:determine_the_damping_of_the_amplitude_of_the_analog_signal_with_1000_3000_or_10000_hz}
 \begin{eqnarray}
-	20 \cdot Log_{10}(\frac{1}{1+(\frac{1000}{3000})^{2\cdot 5}}) &=& -0,00074dB \nonumber \\
-	20 \cdot Log_{10}(\frac{1}{1+(\frac{3000}{3000})^{2\cdot 5}}) &=& -3,0103dB \nonumber \\
-	20 \cdot Log_{10}(\frac{1}{1+(\frac{10000}{3000})^{2\cdot 5}}) &=& -52,2879dB \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{1000}{3000})^{2\cdot 5}}}) &=& -0,00074dB \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{3000})^{2\cdot 5}}}) &=& -3,0103dB \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{10000}{3000})^{2\cdot 5}}}) &=& -52,2879dB \nonumber \\
 \end{eqnarray}
 % section determine_the_damping_of_the_amplitude_of_the_analog_signal_with_1000_3000_or_10000_hz (end)
+\newpage
+
+\section{Draw the double-sided spectrum xs2 for the sampled signal with the designed anti-aliasing filter} % (fold)
+\label{sec:draw_the_double_sided_spectrum_xs2_for_the_sampled_signal_with_the_designed_anti_aliasing_filter}
+Calculating magnitudes for frequencies 1000Hz, 3000Hz and 1900Hz:
+\begin{eqnarray}
+	\frac{1}{\sqrt{1+(\frac{1000}{3000})^{2\cdot 5}}} &=& 0,999992 \nonumber \\
+	\frac{1}{\sqrt{1+(\frac{3000}{3000})^{2\cdot 5}}} &=& 0,707107 \nonumber \\
+	\frac{1}{\sqrt{1+(\frac{19000}{3000})^{2\cdot 5}}} &=& 0,000098 \nonumber \\
+\end{eqnarray}
+These magnitudes are multiplied by the coefficients and the 10kHz sample frequency to get the real magnitudes:
+\begin{eqnarray}
+	0,999992 \cdot 1 \cdot 10kHz &=& 9999,92 \nonumber \\
+	0,707107 \cdot 0,5 \cdot 10kHz &=& 3535,54 \nonumber \\
+	0,000098 \cdot 0,5 \cdot 10kHz &=& 0,49 \nonumber \\
+\end{eqnarray}
+Double sided spectrum plot. The third signal is left out as it is so small compared to the two others:
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=8cm]{images/double-sided-spectrum-3.png}
+	\caption{Double Sided Spectrum}
+	\label{fig:images_double-sided-spectrum-3}
+\end{figure}
+% section draw_the_double_sided_spectrum_xs2_for_the_sampled_signal_with_the_designed_anti_aliasing_filter (end)
+\newpage
+
 \end{document}

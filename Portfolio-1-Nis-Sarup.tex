@@ -144,4 +144,27 @@ Double sided spectrum plot. The third signal is left out as it is so small compa
 % section draw_the_double_sided_spectrum_xs2_for_the_sampled_signal_with_the_designed_anti_aliasing_filter (end)
 \newpage
 
+\section{Calculate the filter order n for an reconstruction filter of Butterworth type} % (fold)
+\label{sec:calculate_the_filter_order_n_for_an_reconstruction_filter_of_butterworth_type}
+By adapting and making two equations we can solve two variables:
+\begin{eqnarray}
+	-0,5dB &\leq& 20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{f_c})^{2n}}}) \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{10000}{f_c})^{2n}}}) &=& 20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{f_c})^{2n}}}) \nonumber \\ \nonumber
+	n = 5,5 &\sim& 6 \nonumber \\
+	f_c &=& 3636,87 \nonumber \\
+\end{eqnarray}
+The order of the filter is 6.
+We then find the limits of $f_c$:
+\begin{eqnarray}
+	-48dB &\leq& 20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{10000}{f_c})^{2 \cdot 6}}}) \nonumber \\
+	f_c &\leq& 3981,08 \nonumber \\
+	-0,5dB &\geq& 20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{f_c})^{2 \cdot 6}}}) \nonumber \\
+	f_c &\geq& 3574,81 \nonumber \\
+\end{eqnarray}
+$f_c$ must lie between 3574,81 and 3981,08. $f_c$ is set to 3700.
+And the new filter:
+\begin{equation}
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{3700})^{2 \cdot 6}}})
+\end{equation}
+% section calculate_the_filter_order_n_for_an_reconstruction_filter_of_butterworth_type (end)
 \end{document}

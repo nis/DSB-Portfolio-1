@@ -1,7 +1,7 @@
 \documentclass[a4wide,10pt]{article}
 \usepackage{a4wide}
 \usepackage[applemac,utf8]{inputenc}
-\usepackage[danish]{babel}
+%\usepackage[danish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{pdfsync}
 \usepackage{amsmath,amssymb,amsfonts} 
@@ -15,7 +15,10 @@
 \author{Nis Sarup}
 \date{\today}
 \maketitle
+\newpage
 
+\tableofcontents
+\newpage
 \section{Draw the double sided spectrum of the amplitudes for the signal x(t)} % (fold)
 \label{sec:draw_the_double_sided_spectrum_of_the_amplitudes_for_the_signal_x_t_}
 By using Eulers princible $x(t)$ can be rewritten as:
@@ -167,4 +170,13 @@ And the new filter:
 	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{3700})^{2 \cdot 6}}})
 \end{equation}
 % section calculate_the_filter_order_n_for_an_reconstruction_filter_of_butterworth_type (end)
+
+\section{Determine the damping of the amplitude in dB of the reconstructed signal} % (fold)
+\label{sec:determine_the_damping_of_the_amplitude_in_db_of_the_reconstructed_signal}
+Damping of the frequencies 1000Hz and 3000Hz.
+\begin{eqnarray}
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{1000}{3700})^{2 \cdot 6}}}) &=& -6,597^{-7}dB \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{\sqrt{1+(\frac{3000}{3700})^{2 \cdot 6}}}) &=& -0,337^{-7}dB \nonumber \\
+\end{eqnarray}
+% section determine_the_damping_of_the_amplitude_in_db_of_the_reconstructed_signal (end)
 \end{document}

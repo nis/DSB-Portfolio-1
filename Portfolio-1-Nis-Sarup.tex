@@ -65,6 +65,7 @@ And a plot of the double sided spectrum:
 \end{figure}
 % section draw_the_double_sided_spectrum_xs1_t_for_the_sampled_signal_without_the_anti_aliasing_filter (end)
 \newpage
+
 \section{Calculate the A/D converter signal in dB} % (fold)
 \label{sec:calculate_the_a_d_converter_signal_in_db}
 A/D-converter signal can be calculated by using:
@@ -96,5 +97,17 @@ Quantization is the steps in which the A/D-converter moves. It is the same as $\
 	\Delta = \frac{2 - (-2)}{2^8} = \frac{1}{64} \nonumber \\
 \end{equation}
 % section determine_the_quantization_voltage_for_the_a_d_converter (end)
+
+\section{Determine the order of the filter for the analog Butterworth} % (fold)
+\label{sec:determine_the_order_of_the_filter_for_the_analog_butterworth}
+The equation can be converted to dB and solved with regards to n:
+\begin{eqnarray}
+	-48dB &=& 20 \cdot log_{10}(\frac{1}{\sqrt{1+(\frac{10000}{3000})^{2n}}}) \nonumber \\
+	n = 4,58997 &\sim& 5 \nonumber
+\end{eqnarray}
+The order of the filter is 5.
+% section determine_the_order_of_the_filter_for_the_analog_butterworth (end)
+\newpage
+
 
 \end{document}

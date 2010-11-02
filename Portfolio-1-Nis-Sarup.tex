@@ -109,5 +109,13 @@ The order of the filter is 5.
 % section determine_the_order_of_the_filter_for_the_analog_butterworth (end)
 \newpage
 
-
+\section{Determine the damping of the amplitude of the analog signal with 1000, 3000
+or 10000 Hz} % (fold)
+\label{sec:determine_the_damping_of_the_amplitude_of_the_analog_signal_with_1000_3000_or_10000_hz}
+\begin{eqnarray}
+	20 \cdot Log_{10}(\frac{1}{1+(\frac{1000}{3000})^{2\cdot 5}}) &=& -0,00074dB \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{1+(\frac{3000}{3000})^{2\cdot 5}}) &=& -3,0103dB \nonumber \\
+	20 \cdot Log_{10}(\frac{1}{1+(\frac{10000}{3000})^{2\cdot 5}}) &=& -52,2879dB \nonumber \\
+\end{eqnarray}
+% section determine_the_damping_of_the_amplitude_of_the_analog_signal_with_1000_3000_or_10000_hz (end)
 \end{document}
